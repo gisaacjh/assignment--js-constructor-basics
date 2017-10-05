@@ -18,73 +18,7 @@
  *     [2]. `showTags`: return all tags from the current photo in a string
  */
 
-var PhotoAlbum = function() {
-  this.photos = [];
-}
 
-PhotoAlbum.prototype.addPicture = function(photo) {
-  this.photos.push(photo);
-}
-
-PhotoAlbum.prototype.showPictures = function(filter) {
-  var pictureNames = [];
-
-  if (typeof filter !== 'undefined') {
-    for (var i = 0; i < this.photos.length; i++) {
-      for (var j = 0; j < this.photos[i].tags.length; j++) {
-
-        if (filter === this.photos[i].tags[j]) {
-          pictureNames.push(this.photos[i].name)
-        }
-      }
-    }
-  } else {
-    pictureNames = JSON.stringify(this.photos, null, 2);
-  }
-
-  // Print results
-  // console.log('printing pictures: ', pictureNames)
-  return pictureNames
-}
-
-var Photo = function(name) {
-  this.name = name;
-  this.tags = [];
-}
-
-Photo.prototype.tag = function(nameTag) {
-  this.tags.push(nameTag);
-}
-
-Photo.prototype.showTags = function() {
-  return this.tags.join(', ');
-}
-
-
-
-
-
-
-var album = new PhotoAlbum();
-var p1, p2, p3;
-
-p1 = new Photo("Paris Trip 1");
-p1.tag("Jimmy");
-p1.tag("Jane");
-p1.tag("Jeff");
-
-album.addPicture(p1);
-
-p2 = new Photo("Look the Eiffel");
-p2.tag("Jimmy");
-p2.tag("Max");
-album.addPicture(p2);
-
-p3 = new Photo("OMG it's so high");
-p3.tag("Jimmy");
-p3.tag("Jane");
-
-album.addPicture(p3);
 
 
 

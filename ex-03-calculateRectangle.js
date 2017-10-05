@@ -5,18 +5,9 @@
  *     [2]. `perimeter`: formula to calculate it: L + L + L + L
  */
 
-function Rectangle(height, width) {
-  this.height = height;
-  this.width = width;  
-}
 
-Rectangle.prototype.area = function() {
-  return this.height * this.width;
-};
 
-Rectangle.prototype.perimeter = function() {
-  return (this.height * 2) + (this.width * 2);  
-}
+
 
 var r = new Rectangle(7, 3);
 

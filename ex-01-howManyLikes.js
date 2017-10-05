@@ -5,17 +5,8 @@
  *     [2]. like: should increment the likes counting by one 
  */
 
-// function Facebook() {
-//   this.likes = 20;
-// }
 
-// Facebook.prototype.howManyLikes = function() {
-//   return this.likes
-// }
 
-// Facebook.prototype.like = function() {
-//   this.likes++;
-// }
 
 
 //*~*~*-*~*~*~*~*~ Don't Touch *~*~*~*~*~*~*~*~*~*~*~
