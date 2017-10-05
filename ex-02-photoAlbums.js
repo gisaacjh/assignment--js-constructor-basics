@@ -17,6 +17,61 @@
  *     [1]. `tag(nameTag)`: save the nameTag in a collection (Array)
  *     [2]. `showTags`: return all tags from the current photo in a string
  */
+ function PhotoAlbum() {
+     this.photos = []
+ }
+
+ PhotoAlbum.prototype.addPicture = function (photo) {
+   this.photos.push(photo);
+ };
+
+ PhotoAlbum.prototype.showPictures = function (filter) {
+   var photoTitle = []
+   for (i = 0; i < this.photos.length; i++) {
+     var photo = this.photos[i]
+     if (photo.tags.indexOf(filter) !== -1) {
+       photoTitle.push(photo.name)
+     }
+   }
+   return photoTitle;
+ };
+
+ function Photo(name) {
+   this.tags = []
+   this.name = name
+ }
+
+ Photo.prototype.tag = function (nameTag) {
+   this.tags.push(nameTag)
+ };
+
+ Photo.prototype.showTags = function () {
+   return this.tags.join(', ')
+ };
+
+
+ //--------------------
+ var album = new PhotoAlbum();
+ var p1, p2, p3;
+
+ p1 = new Photo("Paris Trip 1");
+ p1.tag("Jimmy");
+ p1.tag("Jane");
+ p1.tag("Jeff");
+
+ album.addPicture(p1);
+
+ p2 = new Photo("Look the Eiffel");
+ p2.tag("Jimmy");
+ p2.tag("Max");
+ album.addPicture(p2);
+
+ p3 = new Photo("OMG it's so high");
+ p3.tag("Jimmy");
+ p3.tag("Jane");
+
+ album.addPicture(p3);
+
 
 
 
